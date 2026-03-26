@@ -22,7 +22,7 @@ export default function Footer() {
         <Link to="/">
           <img
             className="size-8 aspect-square"
-            src="/src/assets/favicon.svg"
+            src="/favicon.svg"
             alt="footer logo"
             width={32}
             height={32}
