@@ -36,7 +36,7 @@ export const Login = () => {
           </p>
 
           {state !== "login" && (
-            <div className="flex items-center mt-6 w-full bg-white/5 ring-2 ring-white/10 focus-within:ring-pink-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
+            <div className="flex items-center mt-6 w-full bg-white/5 ring-2 ring-white/10 focus-within:ring-blue-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -65,7 +65,7 @@ export const Login = () => {
             </div>
           )}
 
-          <div className="flex items-center w-full mt-4 bg-white/5 ring-2 ring-white/10 focus-within:ring-pink-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
+          <div className="flex items-center w-full mt-4 bg-white/5 ring-2 ring-white/10 focus-within:ring-blue-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -93,7 +93,7 @@ export const Login = () => {
             />
           </div>
 
-          <div className=" flex items-center mt-4 w-full bg-white/5 ring-2 ring-white/10 focus-within:ring-pink-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
+          <div className=" flex items-center mt-4 w-full bg-white/5 ring-2 ring-white/10 focus-within:ring-blue-500/60 h-12 rounded-full overflow-hidden pl-6 gap-2 transition-all ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -122,14 +122,14 @@ export const Login = () => {
           </div>
 
           <div className="mt-4 text-left">
-            <button className="text-sm text-pink-400 hover:underline">
+            <button className="text-sm text-blue-400 hover:underline">
               Forget password?
             </button>
           </div>
 
           <button
             type="submit"
-            className="mt-2 w-full h-11 rounded-full text-white bg-pink-600 hover:bg-pink-500 transition "
+            className="mt-2 w-full h-11 rounded-full text-white bg-blue-600 hover:bg-blue-500 transition "
           >
             {state === "login" ? "Login" : "Sign up"}
           </button>
@@ -143,7 +143,7 @@ export const Login = () => {
             {state === "login"
               ? "Don't have an account?"
               : "Already have an account?"}
-            <span className="text-pink-400 hover:underline ml-1">
+            <span className="text-blue-400 hover:underline ml-1">
               click here
             </span>
           </p>

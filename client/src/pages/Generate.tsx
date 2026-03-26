@@ -80,7 +80,7 @@ const Generate = () => {
                       onChange={(e) => setTitle(e.target.value)}
                       maxLength={100}
                       placeholder="e.g.10 Tips for better sleep"
-                      className="w-full px-4 py-3 rounded-lg border border-white/12 bg-black/20 text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                      className="w-full px-4 py-3 rounded-lg border border-white/12 bg-black/20 text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <div className="flex mt-2 justify-end">
                       <span className="text-xs text-zinc-400">
@@ -118,7 +118,7 @@ const Generate = () => {
                       onChange={(e) => setAdditionalDetails(e.target.value)}
                       rows={3}
                       placeholder="Add any specific elements, mood, or style preferences ... "
-                      className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/6 text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/6 text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                     />
                   </div>
                 </div>
@@ -126,7 +126,7 @@ const Generate = () => {
                 {!id && (
                   <button
                     onClick={handleGenerate}
-                    className="text-[15px] w-full py-3.5 rounded-xl font-medium bg-linear-to-b from-pink-500 to-pink-600 hover: from-pink-700 disabled:cursor-not-allowed transition-colors"
+                    className="text-[15px] w-full py-3.5 rounded-xl font-medium bg-linear-to-b from-blue-500 to-blue-600 hover: from-blue-700 disabled:cursor-not-allowed transition-colors"
                   >
                     {loading ? "Generating..." : "Generate Thumbnail"}
                   </button>

@@ -20,26 +20,28 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
       >
         <Link to="/">
-          <img className="h-8.5 w-auto" src="/logo.svg" alt="No image found" />
+          <div className="text-2xl font-semibold text-shadow-amber-100">
+            Prompt2Thumb
+          </div>
         </Link>
         <div className="hidden md:flex items-center gap-8 transition duration-500">
-          <Link to="/" className="hover: text-pink-300 transition">
+          <Link to="/" className="hover: text-blue-300 transition">
             Home
           </Link>
-          <Link to="/generate" className="hover: text-pink-300 transition">
+          <Link to="/generate" className="hover: text-blue-300 transition">
             Generate
           </Link>
-          <Link to="/my-generation" className="hover: text-pink-300 transition">
+          <Link to="/my-generation" className="hover: text-blue-300 transition">
             My Generations
           </Link>
-          <Link to="/#" className="hover: text-pink-300 transition">
+          <a href="#contact" className="hover: text-blue-300 transition">
             Contact
-          </Link>
+          </a>
         </div>
 
         <button
           onClick={() => navigate("/login")}
-          className="hidden md:block px-6 py-2.5 bg-pink-600 hover:bg-pink-700 active:scale-95 transition-all rounded-full"
+          className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full"
         >
           Get Started
         </button>
@@ -68,7 +70,7 @@ export default function Navbar() {
         </Link>
         <button
           onClick={() => setIsOpen(false)}
-          className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-pink-600 hover:bg-pink-700 transition text-white rounded-md flex"
+          className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-blue-600 hover:bg-blue-700 transition text-white rounded-md flex"
         >
           <XIcon />
         </button>
