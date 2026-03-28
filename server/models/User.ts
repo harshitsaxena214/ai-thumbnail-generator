@@ -18,6 +18,10 @@ const UserSchema: Schema<IUser> = new Schema(
       unique: true,
       lowercase: true,
     },
+    password: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true },
 );

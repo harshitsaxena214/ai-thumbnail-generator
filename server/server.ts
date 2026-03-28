@@ -4,6 +4,9 @@ import "dotenv/config";
 import connectDB from "./lib/db.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
+import authRouter from "./routes/authRoutes.js";
+import thumbnailRouter from "./routes/thumbnailRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 declare module "express-session" {
   interface SessionData {
@@ -35,9 +38,16 @@ app.use(
 );
 app.use(express.json());
 
+// Health Check
 app.get("/", (req: Request, res: Response) => {
   res.send("Server is Live");
 });
+
+//Routes
+
+app.use("/api/auth", authRouter);
+app.use("/api/thumbnail", thumbnailRouter);
+app.use("/api/user", userRouter);
 
 const port = process.env.PORT ?? 3000;
 
