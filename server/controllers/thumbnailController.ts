@@ -9,6 +9,7 @@ import ai from "../lib/ai.js";
 import path from "path";
 import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
+import { Readable } from "stream";
 
 const stylePrompts = {
   "Bold & Graphic":
@@ -136,8 +137,7 @@ export const generateThumbnail = async (req: Request, res: Response) => {
             resolve(result);
           },
         );
-
-        const { Readable } = require("stream");
+        
         const readable = new Readable();
         readable.push(finalBuffer);
         readable.push(null);
