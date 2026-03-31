@@ -126,27 +126,24 @@ export const generateThumbnail = async (req: Request, res: Response) => {
         finalBuffer = Buffer.from(part.inlineData.data, "base64");
       }
     }
-    const filename = `final-output-${Date.now()}.png`;
-    const filePath = path.join("images", filename);
+    const uploadResult = await new Promise<{ url: string }>(
+      (resolve, reject) => {
+        const uploadStream = cloudinary.uploader.upload_stream(
+          { resource_type: "image", format: "png" },
+          (error, result) => {
+            if (error || !result)
+              return reject(error ?? new Error("Cloudinary upload failed"));
+            resolve(result);
+          },
+        );
 
-    // Create The image directory if it doesn't exist
-    fs.mkdirSync("images", { recursive: true });
-
-    // Write the final image to the file
-    fs.writeFileSync(filePath, finalBuffer!);
-
-    const uploadResult = await cloudinary.uploader.upload(filePath, {
-      resource_type: "image",
-    });
-
-    thumbnail.image_url = uploadResult.url;
-    thumbnail.isGenerating = false;
-    await thumbnail.save();
-
-    res.json({ message: "Thumbnail Generated", thumbnail });
-
-    // Remove Image file from disk
-    fs.unlinkSync(filePath);
+        const { Readable } = require("stream");
+        const readable = new Readable();
+        readable.push(finalBuffer);
+        readable.push(null);
+        readable.pipe(uploadStream);
+      },
+    );
   } catch (error: any) {
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
