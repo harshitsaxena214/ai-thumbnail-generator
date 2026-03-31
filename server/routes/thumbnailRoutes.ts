@@ -1,12 +1,13 @@
 import express from "express";
 import {
   deleteThumbnail,
-  generateThmbnail,
+  generateThumbnail,
 } from "../controllers/thumbnailController.js";
+import protect from "../middlewares/authMiddleware.js";
 
 const thumbnailRouter = express.Router();
 
-thumbnailRouter.post("/generate", generateThmbnail);
-thumbnailRouter.delete("/delete/:id", deleteThumbnail);
+thumbnailRouter.post("/generate",protect,  generateThumbnail);
+thumbnailRouter.delete("/delete/:id",protect, deleteThumbnail);
 
 export default thumbnailRouter;

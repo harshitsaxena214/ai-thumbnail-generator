@@ -41,7 +41,7 @@ const colorSchemeDescriptions = {
     "soft pastel colors, low saturation, gentle tones, calm and friendly aesthetic",
 };
 
-export const generateThmbnail = async (req: Request, res: Response) => {
+export const generateThumbnail = async (req: Request, res: Response) => {
   try {
     const { userId } = req.session;
     const {
